@@ -43,14 +43,14 @@ INSTALLED_APPS = [
 ]
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=20),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
-    'ROTATE_REFRESH_TOKENS': False,
-    'BLACK_LIST_AFTER_ROTATION': True,
-    'UPDATE_LAST_LOGIN': False,
-    'ALGORITHM': 'HS256',
-    'USER_ID_FIELD': 'id',
-    'USER_ID_CLAIM': 'user_id',
+    'ACCESS_TOKEN_LIFETIME'     : timedelta(minutes=20),
+    'REFRESH_TOKEN_LIFETIME'    : timedelta(days=1),
+    'ROTATE_REFRESH_TOKENS'     : False,
+    'BLACK_LIST_AFTER_ROTATION' : True,
+    'UPDATE_LAST_LOGIN'         : False,
+    'ALGORITHM'                 : 'HS256',
+    'USER_ID_FIELD'             : 'id',
+    'USER_ID_CLAIM'             : 'user_id',
 }
 
 MIDDLEWARE = [
@@ -65,7 +65,7 @@ MIDDLEWARE = [
 
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
-        '',
+        'rest_framework.permissions.AllowAny',
     ),
     "DEFAULT_AUTHENTICATION_CLASSES": (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -98,8 +98,8 @@ WSGI_APPLICATION = 'ALCE_Project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE'    : 'django.db.backends.sqlite3',
+        'NAME'      : BASE_DIR / 'db.sqlite3',
     }
 }
 
