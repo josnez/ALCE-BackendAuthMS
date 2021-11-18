@@ -100,7 +100,11 @@ WSGI_APPLICATION = 'ALCE_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME'  : 'authalce',        
+        'NAME'  : 'authalce',
+        'USER'  : 'postgres',
+        'PASSWORD' : '0515',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
