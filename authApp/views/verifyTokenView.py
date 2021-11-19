@@ -1,9 +1,9 @@
-from django.conf import settings
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework_simplejwt.views import TokenVerifyView
-from rest_framework_simplejwt.backends import TokenBackend
-from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
+from django.conf                          import settings
+from rest_framework                       import status
+from rest_framework.response              import Response
+from rest_framework_simplejwt.backends    import TokenBackend
+from rest_framework_simplejwt.views       import TokenVerifyView
+from rest_framework_simplejwt.exceptions  import InvalidToken, TokenError
 from rest_framework_simplejwt.serializers import TokenVerifySerializer
 
 class VerifyTokenView(TokenVerifyView):
@@ -19,5 +19,7 @@ class VerifyTokenView(TokenVerifyView):
         
         except TokenError as e:
             raise InvalidToken(e.args[0])
+        except Exception as e:
+            print(e)
         
         return Response(serializer.validated_data, status=status.HTTP_200_OK)

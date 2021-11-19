@@ -5,6 +5,7 @@ __pycache__/
 
 # Local configuration
 authProject/settings_loc.py
+manage_loc.py
 
 # C extensions
 *.so
