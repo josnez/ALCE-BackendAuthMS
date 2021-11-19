@@ -6,7 +6,7 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ALCE_Project.settings_loc')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'authProject.settings_loc')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
