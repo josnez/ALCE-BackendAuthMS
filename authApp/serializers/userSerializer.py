@@ -16,6 +16,6 @@ class UserSerializer(serializers.ModelSerializer):
             'department'           : user.department,
             'city'                 : user.city,
             'address'              : user.address,
-            'adrress_complement'   : user.address_complement,
+            'address_complement'   : user.address_complement,
             'postal_code'          : user.postal_code
         }
