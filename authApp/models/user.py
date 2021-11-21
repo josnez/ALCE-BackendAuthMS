@@ -35,7 +35,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     department= models.CharField('Department', max_length = 30)
     city= models.CharField('City', max_length = 30)
     address= models.CharField('Address', max_length = 50)
-    address_complement = models.CharField('Address Complement', max_length = 50)
+    address_complement = models.CharField('Address Complement', max_length = 60)
     postal_code = models.CharField('Postal Code', max_length = 10)
         
     def save(self, **kwargs):
