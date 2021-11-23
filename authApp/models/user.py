@@ -28,8 +28,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.BigAutoField(primary_key=True)
-    email = models.EmailField('Email', max_length = 100, unique =True)
-    password = models.CharField('Password', max_length = 256)
+    email = models.EmailField('Email', max_length = 100, unique =True, null=False)
+    password = models.CharField('Password', max_length = 256, null=False)
     name = models.CharField('Name', max_length = 60)
     last_name = models.CharField('Last Name', max_length = 60)
     department= models.CharField('Department', max_length = 30)
@@ -37,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     address= models.CharField('Address', max_length = 50)
     address_complement = models.CharField('Address Complement', max_length = 60)
     postal_code = models.CharField('Postal Code', max_length = 10)
+    num_changed_books = models.IntegerField('Num changed books', default=0)
         
     def save(self, **kwargs):
         some_salt = 'mMUj0DrIK6vgtdIYepkIxN'
