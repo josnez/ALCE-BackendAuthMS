@@ -4,7 +4,7 @@ from authApp.models.user import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'password', 'name', 'last_name', 'email', 'department', 'city', 'address', 'address_complement', 'postal_code']
+        fields = ['id', 'password', 'name', 'last_name', 'email', 'department', 'city', 'address', 'address_complement', 'postal_code', 'num_changed_books']
 
     def to_representation(self, obj):
         user = User.objects.get(id=obj.id)
@@ -17,5 +17,6 @@ class UserSerializer(serializers.ModelSerializer):
             'city'                 : user.city,
             'address'              : user.address,
             'adrress_complement'   : user.address_complement,
-            'postal_code'          : user.postal_code
+            'postal_code'          : user.postal_code,
+            'num_changed_books'    : user.num_changed_books
         }
